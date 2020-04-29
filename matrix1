@@ -1,0 +1,57 @@
+#include<stdio.h>
+int *func(int *a,int n,int m)
+{
+	int i,j;
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<m;j++)
+		{
+			printf("%d",*((a+i*n)+j));
+		}
+		printf("\n");
+		
+	}
+	return a;
+}
+void main()
+{
+	int a[3][3];
+	int *p=&a;
+	int i,j,sum=0;
+	printf("Enter the elements\n");
+	for(i=0;i<3;i++)
+	{
+		for(j=0;j<3;j++)
+		{
+			scanf("%d",(p+i*3)+j);
+		}
+	}
+	
+	
+	for(i=0;i<3;i++)
+	{
+		for(j=0;j<3;j++)
+		{
+			printf("%d ",*((p+i*3)+j));
+	
+		}
+		printf("\n");
+	}
+	printf("The Diagonal Elements are:\n");
+	for(i=0;i<3;i++)
+	{
+		for(j=0;j<3;j++)
+		{
+			if(i==j)
+			{
+				printf("%d\n",*((p+i*3)+j));
+				sum=sum+*((p+i*3)+j);
+			}
+		}
+	}
+	
+	printf("Sum of Diagonal elements=%d",sum);
+		
+	
+	
+}
